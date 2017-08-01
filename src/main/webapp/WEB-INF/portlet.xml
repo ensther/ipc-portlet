@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	<!-- https://web.liferay.com/es/web/meera.success/blog/-/blogs/liferay-inter-portlet-communication-ipc- -->
+	<portlet><!-- Sender public params portlet -->
+		<portlet-name>ipc-public-params-sender-portlet</portlet-name>
+		<display-name>Public Render Parameters IPC Sender Portlet</display-name>
+		<portlet-class>com.example.ipc.PublicRenderParametersIPCSenderPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/WEB-INF/html/public-params/sender.jsp</value>
+		</init-param>
+		<init-param><!-- Hide success message -->			
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Public Render Parameters IPC Sender Portlet</title>
+			<short-title>Public Render Parameters IPC Sender Portlet</short-title>
+			<keywords>ipc,public-render-parameters</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>userEmailAddress</supported-public-render-parameter>
+		<!-- Public parameter in Liferay default filters by category o tags -->
+		<supported-public-render-parameter>categoryId</supported-public-render-parameter>
+		<supported-public-render-parameter>tag</supported-public-render-parameter>
+		<supported-public-render-parameter>tags</supported-public-render-parameter>
+	</portlet>
+	<portlet><!-- Receiver public params portlet -->
+		<portlet-name>ipc-public-params-receiver-portlet</portlet-name>
+		<display-name>Public Render Parameters IPC Receiver Portlet</display-name>
+		<portlet-class>com.example.ipc.PublicRenderParametersIPCReceiverPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/WEB-INF/html/public-params/receiver.jsp</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Public Render Parameters IPC Receiver Portlet</title>
+			<short-title>Public Render Parameters IPC Receiver Portlet</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>userEmailAddress</supported-public-render-parameter>
+		<!-- Public parameter in Liferay default filters by category o tags -->
+		<supported-public-render-parameter>categoryId</supported-public-render-parameter>
+		<supported-public-render-parameter>tag</supported-public-render-parameter>
+		<supported-public-render-parameter>tags</supported-public-render-parameter>
+	</portlet>
+	<portlet><!--Sender Portlet Session  portlet-->
+		<portlet-name>ipc-portlet-session-sender-portlet</portlet-name>
+		<display-name>PortletSessionsIPCSenderPortlet</display-name>
+		<portlet-class>com.example.ipc.PortletSessionsIPCSenderPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/WEB-INF/html/public-session/sender.jsp</value>
+		</init-param>
+		<init-param><!-- Hide success message -->			
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>PortletSessionsIPCSenderPortlet</title>
+			<short-title>PortletSessionsIPCSenderPortlet</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet><!--Receiver Portlet Session  portlet-->
+		<portlet-name>ipc-portlet-session-receiver-portlet</portlet-name>
+		<display-name>PortletSessionsIPCReceiverPortlet</display-name>
+		<portlet-class>com.example.ipc.PortletSessionsIPCReceiverPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/WEB-INF/html/public-session/receiver.jsp</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>PortletSessionsIPCReceiverPortlet</title>
+			<short-title>PortletSessionsIPCReceiverPortlet</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet><!-- Event producer portlet -->
+		<portlet-name>ipc-event-producer-portlet</portlet-name>
+		<display-name>IPCEventProducerPortlet</display-name>
+		<portlet-class>
+			com.example.ipc.IPCEventProducerPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/WEB-INF/html/events/producer.jsp</value>
+		</init-param>
+		<init-param><!-- Hide success message -->			
+			<name>add-process-action-success-action</name>  
+			<value>false</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>IPCEventProducerPortlet</title>
+			<short-title>IPCEventProducerPortlet</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-publishing-event xmlns:event="http://www.liferayipc.com">
+			<qname>event:userEmailAddress</qname>
+		</supported-publishing-event>
+	</portlet>
+	<portlet><!-- Event listener portlet -->
+		<portlet-name>ipc-event-listener-portlet</portlet-name>
+		<display-name>IPCEventListenerPortlet</display-name>
+		<portlet-class>
+			com.example.ipc.IPCEventListenerPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/WEB-INF/html/events/listener.jsp</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>IPCEventListenerPortlet</title>
+			<short-title>IPCEventListenerPortlet</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event xmlns:event="http://www.liferayipc.com">
+			<qname>event:userEmailAddress</qname>
+      </supported-processing-event>
+	</portlet>
+	<portlet><!-- Client side AJAX sender portlet -->
+		<portlet-name>ipc-client-side-sender-portlet</portlet-name>
+		<display-name>Client Side AJAX Sender Portlet</display-name>
+		<portlet-class>com.example.ipc.ClientSideSenderPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/WEB-INF/html/ajax/sender.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Client Side AJAX Sender Portlet</title>
+			<short-title>Client Side AJAX Sender Portlet Action</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet><!-- Client side AJAX receiver portlet -->
+		<portlet-name>ipc-client-side-receiver-portlet</portlet-name>
+		<display-name>Client Side AJAX Receiver Portlet</display-name>
+		<portlet-class>com.example.ipc.ClientSideReceiverPortlet</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/WEB-INF/html/ajax/receiver.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Client Side AJAX Receiver Portlet</title>
+			<short-title>Client Side AJAX Receiver Portlet Action</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	
+	<!-- Events -->
+	<event-definition xmlns:event="http://www.liferaysavvy.com">
+		<qname>event:userEmailAddress</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+	
+	<!-- Public params -->
+	<public-render-parameter>
+        <identifier>userEmailAddress</identifier>
+        <qname xmlns:x="http://liferayipc.com/public-render-parameters/userEmailAddress">x:userEmailAddress</qname>
+    </public-render-parameter>
+    <public-render-parameter>
+		<identifier>categoryId</identifier>
+		<qname xmlns:x="http://www.liferay.com/public-render-parameters">x:categoryId</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>tag</identifier>
+		<qname xmlns:x="http://www.liferay.com/public-render-parameters">x:tag</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>tags</identifier>
+		<qname xmlns:x="http://www.liferay.com/public-render-parameters">x:tags</qname>
+	</public-render-parameter>
+	
+</portlet-app>

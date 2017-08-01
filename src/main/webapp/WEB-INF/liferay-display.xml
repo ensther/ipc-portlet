@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.2.0//EN" "http://www.liferay.com/dtd/liferay-display_6_2_0.dtd">
+
+<display>
+	<category name="category.ipc">
+		<portlet id="ipc-public-params-sender-portlet" />
+		<portlet id="ipc-public-params-receiver-portlet" />
+		<portlet id="ipc-portlet-session-sender-portlet" />
+		<portlet id="ipc-portlet-session-receiver-portlet" />
+		<portlet id="ipc-event-producer-portlet" />
+		<portlet id="ipc-event-listener-portlet" />
+		<portlet id="ipc-client-side-sender-portlet"/>
+		<portlet id="ipc-client-side-receiver-portlet"/>
+	</category>
+</display>
